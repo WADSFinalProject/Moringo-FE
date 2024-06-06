@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../Style/Managing.css";
+import "../Styles/Managing.css";
 import Avatar from "../../Assets/Avatar.svg";
 import Arrow from "../../Assets/Arrow.svg";
 import Bell from "../../Assets/Bell.svg";

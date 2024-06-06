@@ -12,7 +12,7 @@ import {
   Cell,
   Label,
 } from "recharts";
-import "../Style/Dashboard.css";
+import "../Styles/Dashboard.css";
 import Avatar from "../../Assets/Avatar.svg";
 import User from "../../Assets/User.svg";
 import PUser from "../../Assets/PendingUser.svg";

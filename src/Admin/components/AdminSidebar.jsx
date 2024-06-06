@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../Style/SideBar.css";
+import "../Styles/SideBar.css";
 import Leaf from "../../Assets/VectorLeaf.svg";
 import Dashboards from "../../Assets/Dashboard.svg";
 import User from "../../Assets/User.svg";
