@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "Metropolis Black";
+  src: url("/fonts/metropolis.black.otf") format("opentype");
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  padding-top: 0px;
+  height: 100vh;
+  gap: 30px;
+  width: 270px;
+  transition: width 0.3s ease, margin 0.3s;
+}
+
+.menu.move {
+  margin-left: -72px;
+}
+
+.logo {
+  height: 35px;
+  padding-top: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: black;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.logo-text {
+  font-size: 35px;
+  font-family: "Metropolis Black";
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  width: 100%;
+  gap: 10px;
+  transition: width 0.3s ease, transform 0.3s;
+}
+
+.menu-list.move,
+.menu-bottom.move {
+  transform: translateX(-10px);
+}
+
+.menu-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  margin-bottom: 50px;
+  margin-top: auto;
+  transition: transform 0.3s;
+}
+
+.menu-bottom .item,
+.menu-list .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  font-family: "Plus Jakarta Sans";
+  transition: 0.3s ease-in-out;
+}
+
+.menu-bottom .item:hover,
+.menu-list .item:hover {
+  background: white;
+  color: black;
+}
+
+.menu-bottom .item.active,
+.menu-list .item.active {
+  background: white;
+  color: black;
+}
+
+.logo-bottom {
+  filter: invert(27%) sepia(7%) saturate(3022%) hue-rotate(95deg)
+    brightness(88%) contrast(83%) opacity(0.38);
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  transform: scaleX(-1);
+  height: 300px;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.logo-bottom.move {
+  transform: scaleX(-1) translateX(300px);
+  opacity: 0;
+}
+
+.sidebar-text {
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutText {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.fade-out {
+  animation: fadeOutText 0.2s forwards;
+}
+
+.fade-in {
+  animation: fadeInText 0.2s forwards;
+}
+
+@media (max-width: 1090px) {
+  .sidebar-text {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .menu-list {
+    width: 42px;
+  }
+
+  .menu {
+    width: 32px;
+  }
+
+  .menu-bottom {
+    width: 42px;
+  }
+}
+
+@media (max-width: 560px) {
+  .menu {
+    transition: none;
+  }
+}
