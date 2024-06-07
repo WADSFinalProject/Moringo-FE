@@ -6,14 +6,14 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
-import ASidebar from "./Admin/Components/AdminSidebar";
-import ADashboard from "./Admin/Components/AdminDashboard";
-import AManageExistingUser from "./Admin/Components/AdminManageExistingUser";
-import AManagePendingUser from "./Admin/Components/AdminManagePendingUser";
-import AManageBatches from "./Admin/Components/AdminManageBatches";
-import AManageShipment from "./Admin/Components/AdminManageShipment";
-import AManageNotification from "./Admin/Components/AdminManageNotification";
-import LoggedOut from "./Log in & Sign up/Components/LoggedOut";
+import ASidebar from "./Admin/components/AdminSidebar";
+import ADashboard from "./Admin/components/AdminDashboard";
+import AManageExistingUser from "./Admin/components/AdminManageExistingUser";
+import AManagePendingUser from "./Admin/components/AdminManagePendingUser";
+import AManageBatches from "./Admin/components/AdminManageBatches";
+import AManageShipment from "./Admin/components/AdminManageShipment";
+import AManageNotification from "./Admin/components/AdminManageNotification";
+import LoggedOut from "./Log in & Sign up/components/LoggedOut";
 
 function App() {
   const [currentAdminContent, setCurrentAdminContent] = useState("dashboard");

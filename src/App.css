@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("/fonts/PlusJakartaSans-Regular.ttf") format("truetype");
+  src: url("/src/Assets/fonts/PlusJakartaSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("/fonts/Inter-Regular.ttf") format("truetype");
+  src: url("/src/Assets/fonts/Inter-Regular.ttf") format("truetype");
 }
 
 .dashboard {

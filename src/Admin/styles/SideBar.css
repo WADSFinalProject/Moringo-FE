@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Metropolis Black";
-  src: url("/fonts/metropolis.black.otf") format("opentype");
-}
-
 .menu {
   position: relative;
   display: flex;

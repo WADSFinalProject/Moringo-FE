@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Styles/LoggedOut.css";
+import "../styles/LoggedOut.css";
 import Leaf from "../../Assets/VectorLeaf.svg";
 import Arrow from "../../Assets/Arrow.svg";
 import { useNavigate } from "react-router-dom";
