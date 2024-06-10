@@ -23,7 +23,7 @@ function LoggedOut({ onNavigate }) {
     } else if (username == "XYZ" && password == "XYZ") {
       setIsWrongInput(false);
       setIsPopupOpen(false);
-      navigate("/admin");
+      navigate("/xyz");
     } else {
       setIsWrongInput(true);
       setIsPopupOpen(true);

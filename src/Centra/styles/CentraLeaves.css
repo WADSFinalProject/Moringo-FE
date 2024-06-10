@@ -1,0 +1,373 @@
+.centra-top-section {
+  height: 15vh;
+  width: 100vw;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.centra-main-header {
+  width: 100vw;
+  max-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.centra-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 82.5%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 0 2vw;
+  padding-bottom: 2vh;
+  box-sizing: border-box;
+}
+
+.back-arrow {
+  font-size: 8vw;
+}
+
+.leaves-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5.3vw;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.right-icons .MuiBadge-root {
+  margin-right: 1vw;
+}
+
+.subtitle-centra {
+  text-align: left;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 80vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 5.5vw;
+}
+
+.semi-circle-gauge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 83vw;
+  box-shadow: 0px 4px 7.6px rgba(0, 0, 0, 0.5);
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border-radius: 3vw;
+}
+
+.progress-uncompleted {
+  background-color: #f0ecec;
+}
+
+.progress-uncompleted2 {
+  background-color: white;
+}
+
+.progress-uncompleted3 {
+  background-color: #e4e5e5;
+}
+
+.progress-completed {
+  background-color: #ecf1dc;
+}
+
+.semi-circle-gauge {
+  width: 80%;
+  height: auto;
+}
+
+.background-arc {
+  fill: none;
+  stroke: #c8d0c5;
+  stroke-width: 10;
+}
+
+.foreground-arc {
+  fill: none;
+}
+
+.gauge-info {
+  position: absolute;
+  top: 35%;
+  text-align: center;
+}
+
+.gauge-percentage {
+  font-size: 5vw;
+  font-weight: bold;
+  color: black;
+}
+
+.gauge-weight {
+  font-size: 3.6vw;
+  color: black;
+  font-weight: bold;
+}
+
+.total-weight-label {
+  font-size: 2.8vw;
+  color: black;
+}
+
+.gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  color: black;
+  font-size: 3.6vw;
+}
+
+.leaves-batches-container {
+  width: 83vw;
+  border-radius: 3vw;
+  border: solid 1px #cccccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaves-batches-header,
+.leaves-batches-rectangle {
+  display: grid;
+  grid-template-columns: 1.1fr 1.25fr 0.95fr 0.7fr;
+  gap: 10px;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 3.2vw;
+  font-weight: 600;
+  padding-top: 0.75vh;
+  padding-bottom: 1vh;
+  box-sizing: border-box;
+}
+
+.centra-version2 {
+  grid-template-columns: 1.05fr 0.8fr 1.15fr;
+}
+
+.leaves-batches-header {
+  background-color: #2c3f31;
+  border-radius: 3vw;
+  height: 4vh;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  color: white;
+}
+
+.leaves-batches-rectangle {
+  border-radius: 15px;
+  box-shadow: 0px 4px 7.6px rgba(0, 0, 0, 0.2);
+  border: 1px #cccccc solid;
+  margin-bottom: 1.5vh;
+  font-size: 3.2vw;
+  font-weight: 500;
+  color: black;
+}
+.color-change {
+  color: #2c3f31;
+}
+
+.date-and-time-leaf-batch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.batch-info-not-drying {
+  color: black;
+}
+
+.batch-info-drying {
+  color: #999c9e;
+}
+
+.batch-edit-not-drying {
+  color: #33563d;
+}
+
+.batch-info .batch-edit {
+  font-weight: 600;
+}
+
+.batch-info {
+  font-size: 3.3vw;
+  text-align: center;
+}
+
+.batch-edit {
+  font-size: 2.6vw;
+  text-decoration: underline;
+}
+
+.batch-date-info {
+  font-size: 2.75vw;
+  font-weight: 400;
+}
+
+.add-batches-notice {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 7.6px rgba(0, 0, 0, 0.4);
+  border: 1px #000000 solid;
+  font-size: 3.2vw;
+  font-weight: 500;
+  color: black;
+  width: 90%;
+  text-align: center;
+  padding-top: 0.75vh;
+  padding-bottom: 1vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 1.5vh;
+  box-sizing: border-box;
+}
+
+.drying-section {
+  width: 83vw;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  border: solid 1px #bfbfbf;
+  margin-top: 2vh;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+.powder-version {
+  margin-bottom: 3.5vh;
+}
+
+.drying-batch-header {
+  background-color: #2c3f31;
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px 10px 0 0;
+  font-size: 3.5vw;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drying-batch-footer {
+  background-color: #ececec;
+  color: white;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  font-size: 3.5vw;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(17.5vh + 15vw);
+  border: solid 2px #bfbfbf;
+}
+
+.circular-timer {
+  width: 85%; /* Ensures the SVG scales with the container */
+  height: 85%;
+}
+
+.timer-text {
+  fill: black;
+  font-weight: bold;
+}
+
+.black-text {
+  color: black;
+}
+
+.batch-time-field {
+  width: 73vw;
+  height: 3.5vh;
+  border-radius: 5vw;
+  color: black;
+  border: solid 1px #a3a3a3;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.batch-grey-bg {
+  background-color: #d5d5d5;
+}
+
+.batch-field-title {
+  color: black;
+  width: 73vw;
+  text-align: left;
+  margin-top: 1.5vh;
+  margin-bottom: 0.5vh;
+  font-size: 3vw;
+}
+
+.confirmation-text {
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.confirmation-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation-info-details {
+  background-color: white;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4vw;
+  border: solid 1px #bfbfbf;
+  text-align: left;
+  padding: 0.5vh 3vw;
+  margin-bottom: 1vh;
+}
+
+.confirmation-info-detail-full {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.batch-overview-drying {
+  width: 90%;
+  text-align: left;
+  font-size: 3vw;
+  margin-top: 0.2vh;
+  margin-bottom: 0.3vh;
+  font-weight: 600;
+}

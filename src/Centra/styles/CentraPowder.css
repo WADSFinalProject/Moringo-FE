@@ -1,0 +1,35 @@
+.batch-default {
+  background-color: white;
+}
+.batch-selected {
+  background-color: #adbb7f;
+  color: white;
+}
+.batch-disabled {
+  background-color: #e4e5e5;
+  color: #999c9e;
+}
+
+.batch-default,
+.batch-selected,
+.batch-disabled {
+  width: 100%;
+}
+
+.dry-leaf-batch-container {
+  width: 90%;
+}
+
+.batch-amount-select-button {
+  width: 15vw;
+  height: 50%;
+  border-radius: 5vw;
+}
+
+.powder-batch-number-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  padding-top: 1vh;
+}
