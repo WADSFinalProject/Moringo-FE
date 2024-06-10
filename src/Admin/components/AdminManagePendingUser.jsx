@@ -314,7 +314,13 @@ const ManagePendingUser = ({ onNavigate }) => {
         <div className="card-header">
           <div>
             <div className="card-title">Username: </div>
-            <div className="card-subtitle">{user.username}</div>
+            <div
+              className={`card-subtitle ${
+                user.username.length > 12 ? "long-word-break" : ""
+              }`}
+            >
+              {user.username}
+            </div>
           </div>
           <div
             style={{
@@ -325,7 +331,8 @@ const ManagePendingUser = ({ onNavigate }) => {
           >
             <button
               style={{
-                marginRight: "5px",
+                padding: "0px",
+                marginLeft: "5px",
                 backgroundColor: "transparent",
                 borderColor: "transparent",
               }}
@@ -335,7 +342,7 @@ const ManagePendingUser = ({ onNavigate }) => {
             </button>
             <button
               style={{
-                marginRight: "5px",
+                padding: "0px",
                 backgroundColor: "transparent",
                 borderColor: "transparent",
               }}

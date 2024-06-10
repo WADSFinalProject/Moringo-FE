@@ -157,7 +157,9 @@ const ManageNotification = ({ onNavigate }) => {
             >
               Delete Selected
             </button>
-            {windowWidth <= 560 ? null : <div> | </div>}
+            {windowWidth <= 560 ? null : (
+              <div style={{ fontSize: "21px" }}> | </div>
+            )}
             <button
               className="notification-select-button"
               onClick={handleSelectAll}

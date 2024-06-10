@@ -37,7 +37,7 @@ const fetchExistingUsers = () => {
       {
         number: "4",
         name: "Bean Doe Bean Doe Bean Doe",
-        username: "BEAN0",
+        username: "BEAN0O0O0O0O0O0O0O0",
         email:
           "beanssssssssssssssssssssssssssssssssssssssssssssssssassssssssssssssssssssssS@gmail.com",
         userType: "HARBOR",
@@ -185,7 +185,13 @@ const ManageExistingUser = ({ onNavigate }) => {
         <div className="card-header">
           <div>
             <div className="card-title">Username: </div>
-            <div className="card-subtitle">{user.username}</div>
+            <div
+              className={`card-subtitle ${
+                user.username.length > 15 ? "long-word-break" : ""
+              }`}
+            >
+              {user.username}
+            </div>
           </div>
           <button
             style={{

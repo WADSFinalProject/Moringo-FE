@@ -28,7 +28,8 @@
 
 .logo-text {
   font-size: 35px;
-  font-family: "Metropolis Black";
+  font-family: Figtree;
+  font-weight: 900;
 }
 
 .menu-list {
@@ -66,7 +67,6 @@
   padding: 10px;
   border-radius: 10px;
   color: black;
-  font-family: "Plus Jakarta Sans";
   transition: 0.3s ease-in-out;
 }
 
@@ -99,7 +99,6 @@
 }
 
 .sidebar-text {
-  font-family: "Plus Jakarta Sans";
   font-size: 16px;
   font-weight: bold;
   white-space: nowrap;

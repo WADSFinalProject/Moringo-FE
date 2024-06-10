@@ -35,7 +35,6 @@
   border-top-right-radius: 10px;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
   font-size: 14px;
-  font-family: "Inter";
 }
 
 .p-tab-line {
@@ -173,7 +172,7 @@
 }
 
 .p-table-container td {
-  padding: 10px;
+  padding: 10px 5px;
   font-weight: bold;
   text-align: center;
   overflow-wrap: break-word;
@@ -245,7 +244,7 @@
   justify-content: center;
   align-items: center;
   height: 22px;
-  width: 90px;
+  width: 100px;
   border-radius: 25px;
   color: white;
   font-weight: normal;
@@ -301,6 +300,7 @@
 .back-button {
   height: 50px;
   width: 50px;
+  padding: 0px;
   margin-left: 20px;
   background-color: #224030;
   color: white;
@@ -323,12 +323,10 @@
 }
 
 .b-edit-mode-text-title {
-  font-family: "Plus Jakarta Sans";
   font-size: 25px;
 }
 
 .b-edit-mode-text-subtitle {
-  font-family: "Plus Jakarta Sans";
   font-size: 15px;
   color: #cccccc;
 }
@@ -436,7 +434,7 @@
 }
 
 .search-dropdown-wrapper::after {
-  content: url("../Assets/Filter.svg");
+  content: url("../../Assets/Filter.svg");
   position: absolute;
   top: 5px;
   right: 5px;
@@ -479,7 +477,7 @@
   display: flex;
   align-items: center;
   height: 25px;
-  width: 90px;
+  width: 95px;
   border-radius: 25px;
   color: white;
   font-weight: normal;
@@ -559,7 +557,7 @@
 .notification-select-button,
 .notification-delete-button {
   height: 25px;
-  width: 100px;
+  width: 110px;
   background-color: #35c759;
   color: white;
   border: none;
@@ -617,7 +615,6 @@
 }
 
 .top-secondary-title {
-  font-family: "Inter";
   font-size: 20px;
   font-weight: bolder;
   color: white;
