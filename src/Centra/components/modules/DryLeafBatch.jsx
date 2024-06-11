@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const DryLeafBatch = ({
   date,
@@ -12,22 +12,22 @@ const DryLeafBatch = ({
   const formattedWeight = weight.toFixed(1);
 
   const batchClass = isDisabled
-    ? 'batch-disabled'
+    ? "batch-disabled"
     : isSelected
-    ? 'batch-selected'
-    : 'batch-default';
+    ? "batch-selected"
+    : "batch-default";
 
   return (
     <div
-      className={`leaves-batches-rectangle ${batchClass}`}
+      className={`leaves-batches-rectangle centra-version2 ${batchClass}`}
       onClick={isDisabled ? undefined : onClick}
     >
-      <div className='date-and-time-leaf-batch'>
-        <div className='batch-info'>{time}</div>
-        <div className='batch-date-info'>{date}</div>
+      <div className="date-and-time-leaf-batch">
+        <div className="batch-info">{time}</div>
+        <div className="batch-date-info">{date}</div>
       </div>
-      <div className='batch-info'>{batchId}</div>
-      <div className='batch-info'>{`${formattedWeight} kg`}</div>
+      <div className="batch-info">{batchId}</div>
+      <div className="batch-info">{`${formattedWeight} kg`}</div>
     </div>
   );
 };

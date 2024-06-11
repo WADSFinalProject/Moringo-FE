@@ -221,6 +221,7 @@ const CentraPowder = () => {
                 width: "27%",
                 marginLeft: "1.5%",
                 marginRight: "1.5%",
+                whiteSpace: "nowrap",
                 border: "solid 1px #CCCCCC",
                 "&:hover": {
                   backgroundColor:
@@ -240,6 +241,7 @@ const CentraPowder = () => {
                 marginLeft: "1.5%",
                 marginRight: "1.5%",
                 border: "solid 1px #CCCCCC",
+                whiteSpace: "nowrap",
                 "&:hover": {
                   backgroundColor:
                     requiredSelections === 3 ? "#ADBB7F" : "white",
@@ -258,6 +260,7 @@ const CentraPowder = () => {
                 marginLeft: "1.5%",
                 marginRight: "1.5%",
                 border: "solid 1px #CCCCCC",
+                whiteSpace: "nowrap",
                 "&:hover": {
                   backgroundColor:
                     requiredSelections === 7 ? "#ADBB7F" : "white",
