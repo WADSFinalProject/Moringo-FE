@@ -330,7 +330,7 @@ const XYZDashboard = ({ onNavigate }) => {
             <div className="d-half-manage-options">
               <a
                 href="#"
-                className="d-display button"
+                className="d-display buttonDisp"
                 onClick={() => onNavigate("unPackages")}
               >
                 <div className="d-box">
@@ -343,7 +343,7 @@ const XYZDashboard = ({ onNavigate }) => {
               </a>
               <a
                 href="#"
-                className="d-display button"
+                className="d-display buttonDisp"
                 onClick={() => onNavigate("rePackages")}
               >
                 <div className="d-box">
@@ -358,7 +358,7 @@ const XYZDashboard = ({ onNavigate }) => {
             <div className="d-half-manage-options">
               <a
                 href="#"
-                className="d-display button long"
+                className="d-display buttonDisp long"
                 onClick={() => onNavigate("manageShip")}
               >
                 <div className="d-box long">

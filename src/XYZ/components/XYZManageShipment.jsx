@@ -148,24 +148,6 @@ const XYZManageShipment = ({ onNavigate }) => {
     setShipmentDate("");
   };
 
-  const handleConfirmEdit = () => {
-    const [year, month, day] = shipmentDate.split("-");
-    const updatedShipment = {
-      ...selectedShipment,
-      date: `${day}/${month}/${year}`,
-      weight: formatWeight(selectedShipment.weight),
-    };
-
-    setXYZShipment((prev) =>
-      prev.map((shipment) =>
-        shipment.shipmentid === selectedShipment.shipmentid
-          ? updatedShipment
-          : shipment
-      )
-    );
-    handleBack();
-  };
-
   const handleDelete = () => {
     setXYZShipment((prev) =>
       prev.filter(
@@ -173,21 +155,6 @@ const XYZManageShipment = ({ onNavigate }) => {
       )
     );
     handleBack();
-  };
-
-  const isInputFilled = (value) => {
-    return value ? "b-edit-mode-input filled" : "b-edit-mode-input";
-  };
-
-  const isFormFilled = () => {
-    return (
-      selectedShipment.shipmentid &&
-      selectedShipment.courier &&
-      selectedShipment.date &&
-      selectedShipment.weight &&
-      selectedShipment.packages &&
-      selectedShipment.status
-    );
   };
 
   const renderMobileCards = () => {
@@ -199,14 +166,10 @@ const XYZManageShipment = ({ onNavigate }) => {
             <div className="card-subtitle">{shipment.shipmentid}</div>
           </div>
           <button
-            style={{
-              marginRight: "5px",
-              backgroundColor: "transparent",
-              borderColor: "transparent",
-            }}
+            className="accept-button xyz mobile"
             onClick={() => handleEdit(shipment)}
           >
-            <img src={Edit} className="card-edit" />
+            <img src={Details} />
           </button>
         </div>
         <div className="card-content">
@@ -338,9 +301,9 @@ const XYZManageShipment = ({ onNavigate }) => {
                   className="search-dropdown"
                 >
                   <option value="All">All</option>
-                  <option value="CENTRA">Centra</option>
-                  <option value="HARBOR">Harbor</option>
-                  <option value="XYZ">XYZ</option>
+                  <option value="Arrived">Arrived</option>
+                  <option value="OTW">OTW</option>
+                  <option value="Pending">Pending</option>
                 </select>
               </div>
             </div>
@@ -374,9 +337,9 @@ const XYZManageShipment = ({ onNavigate }) => {
                       className="search-dropdown"
                     >
                       <option value="All">All</option>
-                      <option value="CENTRA">Centra</option>
-                      <option value="HARBOR">Harbor</option>
-                      <option value="XYZ">XYZ</option>
+                      <option value="Arrived">Arrived</option>
+                      <option value="OTW">OTW</option>
+                      <option value="Pending">Pending</option>
                     </select>
                   </div>
                 </div>

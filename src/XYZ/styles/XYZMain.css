@@ -51,12 +51,18 @@
   font-size: 16px;
 }
 
-.accept-button.xyz {
+.accept-button.xyz,
+.accept-button.xyz.mobile {
   display: flex;
   background-color: #7b7b7b;
   height: 25px;
   align-items: center;
   margin: auto;
+}
+
+.accept-button.xyz.mobile {
+  margin: unset;
+  align-self: center;
 }
 
 @media (max-width: 770px) {

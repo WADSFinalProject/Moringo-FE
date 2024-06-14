@@ -168,9 +168,12 @@
 }
 
 .d-display.buttonDisp {
-  max-height: 100px;
   height: 100%;
   text-decoration: none;
+}
+
+.d-display.buttonDisp.long {
+  max-height: none;
 }
 
 .d-display.buttonDisp:hover {
@@ -423,8 +426,8 @@
     justify-content: center;
   }
 
-  .d-display.buttonDisp {
-    max-height: none;
+  .d-display.buttonDisp.long {
+    max-height: 150px;
   }
 
   .d-display.buttonDisp:hover {
@@ -432,6 +435,7 @@
   }
 
   .d-box-image {
+    margin-left: 0px;
     filter: invert(73%) sepia(4%) saturate(2820%) hue-rotate(34deg)
       brightness(98%) contrast(91%);
     width: 70px;
@@ -520,10 +524,6 @@
 }
 
 @media (max-width: 480px) {
-  .d-display.buttonDisp {
-    min-height: 150px;
-  }
-
   .d-box-detail {
     width: 55%;
   }
