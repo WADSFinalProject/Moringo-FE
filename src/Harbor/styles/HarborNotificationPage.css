@@ -1,0 +1,85 @@
+.notification-list {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  background-color: #f1f1f1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 3vh;
+  box-sizing: border-box;
+  border-radius: 3vw;
+  flex-direction: row;
+}
+
+.notification-item-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.notification-item-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-read {
+  background-color: #ecf1dc;
+}
+
+.notification-unread {
+  background-color: #f1f1f1;
+}
+
+.notification-item p {
+  margin: 0;
+  color: black;
+}
+
+.notification-item span {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.notification-list h2 {
+  font-size: 1em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.notif-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-button {
+  width: 6vw;
+  height: auto;
+}
+
+.Delete {
+  background: url("../../Assets/trash.svg") no-repeat center center;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* Ensure the button is pushed to the end */
+}
+
+.filter-icon {
+  display: flex;
+  padding-top: 2vh;
+  width: 95%;
+  justify-content: right;
+}

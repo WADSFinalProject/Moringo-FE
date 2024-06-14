@@ -1,0 +1,31 @@
+.container-signup {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.sign-up-text {
+  color: black;
+  font-size: 27px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  word-wrap: break-word;
+  margin-top: 7vh;
+  margin-bottom: 4vh;
+}
+
+.country-selector .css-84nhb1-MuiAutocomplete-root {
+  width: auto !important; /* Override the width property */
+}
+
+.mobile-signup-button {
+  margin-bottom: 7vh;
+}
+
+.empty-space {
+  height: 2vh;
+}

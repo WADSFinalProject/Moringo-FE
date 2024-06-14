@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Managing.css";
-import Avatar from "../../Assets/Avatar.svg";
+import "../styles/AdminManaging.css";
 import Arrow from "../../Assets/Arrow.svg";
 import Bell from "../../Assets/Bell.svg";
 import Bell2 from "../../Assets/BellTemp.svg";
 import User from "../../Assets/User.svg";
 import Edit from "../../Assets/Edit.svg";
+import ProfilePictureMini from "../../Assets/modules/ProfilePictureMini.jsx";
 
 const fetchExistingUsers = () => {
   return new Promise((resolve) => {
@@ -261,7 +261,7 @@ const ManageExistingUser = ({ onNavigate }) => {
         >
           <img src={Arrow} className="back-arrow" />
         </button>
-        <div className="title">Manage Existing User</div>
+        <div className="a-title">Manage Existing User</div>
         <div className="time-detail">
           <div className="text">Last Data Refresh at: </div>
           <div className="time">25 March 2024 ~ 10:30 PM</div>
@@ -286,7 +286,7 @@ const ManageExistingUser = ({ onNavigate }) => {
               <div className="name">John Doe</div>
               <div className="id">JOHN45</div>
             </div>
-            <img src={Avatar} className="avatar-icon" />
+            <ProfilePictureMini />
           </div>
         </div>
       </div>

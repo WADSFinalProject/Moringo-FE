@@ -12,8 +12,7 @@ import {
   Cell,
   Label,
 } from "recharts";
-import "../styles/Dashboard.css";
-import Avatar from "../../Assets/Avatar.svg";
+import "../styles/AdminDashboard.css";
 import User from "../../Assets/User.svg";
 import PUser from "../../Assets/PendingUser.svg";
 import Batch from "../../Assets/Batches.svg";
@@ -22,6 +21,7 @@ import Bell from "../../Assets/Bell.svg";
 import Bell2 from "../../Assets/BellTemp.svg";
 import LogOut from "../../Assets/LogOutTemp.svg";
 import { useNavigate } from "react-router-dom";
+import ProfilePictureMini from "../../Assets/modules/ProfilePictureMini.jsx";
 
 const Dashboard = ({ onNavigate }) => {
   const [resizing, setResizing] = useState(false);
@@ -95,64 +95,87 @@ const Dashboard = ({ onNavigate }) => {
   return (
     <div className="p-container">
       <div className="top special">
-        <div className="title">Admin Dashboard</div>
+        <div className="a-title">Admin Dashboard</div>
         <div className="time-detail">
           <div className="text">Last Data Refresh at: </div>
           <div className="time">25 March 2024 ~ 10:30 PM</div>
         </div>
         <div className="profile-detail-temp">
-          {windowWidth <= 560 ? (
-            <button
+          {windowWidth <= 560 ? null : (
+            <div
               style={{
-                marginRight: "5px",
-                backgroundColor: "transparent",
-                borderColor: "transparent",
+                display: "flex",
+                flexDirection: "row",
+                width: windowWidth <= 560 ? "auto" : "100%",
               }}
-              onClick={() => navigate("/login")}
             >
-              <img src={LogOut} className="notif-bell" />
-            </button>
-          ) : null}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              width: windowWidth <= 560 ? "auto" : "100%",
-            }}
-          >
-            <button
-              style={{
-                marginRight: "5px",
-                backgroundColor: "transparent",
-                borderColor: "transparent",
-              }}
-              onClick={() => onNavigate("notification")}
-            >
-              {windowWidth <= 560 ? (
-                <img src={Bell2} className="notif-bell" />
-              ) : (
+              <button
+                style={{
+                  marginRight: "5px",
+                  backgroundColor: "transparent",
+                  borderColor: "transparent",
+                }}
+                onClick={() => onNavigate("notification")}
+              >
                 <img src={Bell} className="notif-bell" />
-              )}
-            </button>
-            <div className="profile-detail">
-              <div className="name-detail">
-                <div className="name">John Doe</div>
-                <div className="id">JOHN45</div>
+              </button>
+              <div className="profile-detail">
+                <div className="name-detail">
+                  <div className="name">John Doe</div>
+                  <div className="id">JOHN45</div>
+                </div>
+                <ProfilePictureMini />
               </div>
-              <img src={Avatar} className="avatar-icon" />
             </div>
-          </div>
+          )}
         </div>
         {windowWidth <= 560 ? (
           <div style={{ width: "100%" }}>
-            <div
-              style={{ color: "white", textAlign: "end", marginTop: "10px" }}
-            >
-              ADMIN
+            <div className="admin-special-header">
+              <button
+                style={{
+                  marginRight: "5px",
+                  backgroundColor: "transparent",
+                  borderColor: "transparent",
+                }}
+                onClick={() => navigate("/login")}
+              >
+                <img
+                  style={{
+                    height: "25px",
+                    width: "25px",
+                  }}
+                  src={LogOut}
+                  className="notif-bell"
+                />
+              </button>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <button
+                  style={{
+                    marginRight: "5px",
+                    backgroundColor: "transparent",
+                    borderColor: "transparent",
+                  }}
+                  onClick={() => onNavigate("notification")}
+                >
+                  <img
+                    style={{
+                      height: "25px",
+                      width: "25px",
+                    }}
+                    src={Bell2}
+                    className="notif-bell"
+                  />
+                </button>
+                ADMIN
+              </div>
             </div>
             <div>
-              <div className="dashboard-m-title">Hello Maximiliana!</div>
-              <div className="dashboard-m-subtitle">{formattedTime}</div>
+              <div className="dashboard-m-title-wrapper">
+                <div className="dashboard-m-title">Hello! Maximiliana</div>
+                <ProfilePictureMini />
+              </div>
+              <div className="dashboard-m-subtitle">{formattedTime},</div>
               <div className="dashboard-m-subtitle">{formattedDate}</div>
             </div>
           </div>
@@ -303,13 +326,12 @@ const Dashboard = ({ onNavigate }) => {
             </div>
           </div>
         )}
-
         <div className="d-bottom-half-bottom">
           <div className="d-manage-options">
             <div className="d-half-manage-options">
               <a
                 href="#"
-                className="d-display button"
+                className="d-display buttonDisp"
                 onClick={() => onNavigate("manageExist")}
               >
                 <div className="d-box">
@@ -322,7 +344,7 @@ const Dashboard = ({ onNavigate }) => {
               </a>
               <a
                 href="#"
-                className="d-display button"
+                className="d-display buttonDisp"
                 onClick={() => onNavigate("managePend")}
               >
                 <div className="d-box">
@@ -343,7 +365,7 @@ const Dashboard = ({ onNavigate }) => {
             <div className="d-half-manage-options">
               <a
                 href="#"
-                className="d-display button"
+                className="d-display buttonDisp"
                 onClick={() => onNavigate("manageBatch")}
               >
                 <div className="d-box">
@@ -356,7 +378,7 @@ const Dashboard = ({ onNavigate }) => {
               </a>
               <a
                 href="#"
-                className="d-display button"
+                className="d-display buttonDisp"
                 onClick={() => onNavigate("manageShip")}
               >
                 <div className="d-box">

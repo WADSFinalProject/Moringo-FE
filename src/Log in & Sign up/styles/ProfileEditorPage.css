@@ -1,0 +1,103 @@
+.container-settings {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex; /* Add flexbox */
+  overflow-y: auto;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Horizontally center content */
+}
+
+.mobile-header.temp {
+  min-height: 220px;
+  padding-bottom: 20px;
+}
+
+.mobile-header.temp::after {
+  position: absolute;
+  top: -88px;
+  transform: translateX(-50%);
+  transform: scale(0.57);
+  filter: invert(43%) sepia(61%) saturate(380%) hue-rotate(65deg)
+    brightness(98%) contrast(94%);
+  z-index: 0;
+}
+
+.header-editor {
+  min-width: 100vw;
+  min-height: 50vh;
+  position: absolute;
+  top: -14%;
+  left: 0;
+}
+
+.leaf-editor {
+  position: absolute;
+  max-height: 38vh;
+  top: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-editor {
+  position: absolute;
+  top: 7.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.top-editor h3 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  font-size: 30px;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
+
+.edit-text {
+  text-align: center;
+  position: absolute;
+  top: 31%; /* Adjust top position */
+  color: black;
+  font-size: 14px; /* Add 'px' */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.textfield-container-edit {
+  width: 90vw; /* Set width for textfields */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 39%;
+  gap: 20px; /* Add gap between textfields */
+}
+
+.textfield-container-edit > * {
+  width: 100%;
+}
+
+.form-container {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+/* Apply black color to all labels */
+.MuiFormControlLabel-label {
+  color: black !important;
+}
+
+.button-container {
+  display: flex;
+  position: absolute;
+  top: 112%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+}

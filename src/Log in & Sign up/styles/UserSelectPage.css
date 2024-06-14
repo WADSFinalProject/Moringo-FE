@@ -1,0 +1,97 @@
+.container-select {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.svg-icon {
+  fill: rgb(190, 7, 7); /* default color */
+}
+
+.button:hover .svg-icon,
+.button:focus .svg-icon {
+  fill: white; /* color when button is hovered or focused */
+}
+
+.button {
+  /* Your existing button styles */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.35); /* Adjust shadow as needed */
+  background-color: white;
+  border-radius: 14px;
+  width: 70vw;
+  height: 13vh;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+  color: black;
+}
+
+.last {
+  margin-bottom: 7vh;
+}
+
+.active {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+.selection-text {
+  font-size: 21px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  word-wrap: break-word;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.active .selection-text {
+  color: white;
+}
+
+.mobile-login-title {
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 10vh;
+  margin-bottom: 5px;
+}
+
+.mobile-login-subtitle {
+  color: black;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  margin-bottom: 3vh;
+}
+
+.success-text {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.wait-text {
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #000; /* Button color */
+  font-size: 25px;
+  line-height: 1;
+  padding: 0;
+}

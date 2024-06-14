@@ -1,0 +1,97 @@
+.d-box.long {
+  flex-direction: row;
+  gap: 25px;
+}
+
+.d-display.button.long {
+  max-height: unset;
+}
+
+.rescale-font {
+  font-size: 20px;
+}
+
+.rescale-font2 {
+  font-size: 24px;
+}
+
+.rescale-input-smaller {
+  height: 22.5px;
+  width: 100%;
+}
+
+.rescaling-content {
+  height: 95%;
+  font-weight: bold;
+}
+
+.rescaling-button {
+  align-self: center;
+  font-size: 18px;
+  background-color: #224030;
+  height: 30px;
+  width: 150px;
+  border-radius: 15px;
+  margin-top: auto;
+}
+
+.b-delete-button.xyz,
+.edit-button.xyz {
+  height: 25px;
+  width: 65px;
+  align-self: center;
+}
+
+.b-confirm-button.xyz2 {
+  height: 30px;
+  width: 50%;
+  margin-top: auto;
+  align-self: center;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.accept-button.xyz {
+  display: flex;
+  background-color: #7b7b7b;
+  height: 25px;
+  align-items: center;
+  margin: auto;
+}
+
+@media (max-width: 770px) {
+  .rescale-column {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .dot-temp {
+    display: none;
+  }
+  .rescale-font {
+    align-items: center;
+    font-size: 20px;
+    flex-direction: column;
+    gap: 7.5px;
+    margin-bottom: 10px;
+  }
+
+  .rescaling-content {
+    text-align: center;
+  }
+
+  .rescale-input-smaller {
+    height: 22.5px;
+    text-align: center;
+    width: 100px;
+  }
+
+  .d-box.long {
+    flex-direction: row;
+  }
+
+  .d-box-detail.long {
+    width: unset;
+  }
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CentraHeader from "../../Assets/centra-main-header.svg";
 import CentraBackArrow from "../../Assets/back-arrow-centra.svg";
 import { useNavigate } from "react-router-dom";
-import ProfilePictureMini from "./modules/ProfilePictureMini.jsx";
+import ProfilePictureMini from "../../Assets/modules/ProfilePictureMini.jsx";
 import "../styles/CentraDeliveries.css";
 import UndeliveredBatch from "./modules/UndeliveredBatch.jsx";
 import OngoingDelivery from "./modules/OngoingDelivery.jsx";

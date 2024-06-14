@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CentraHeader from "../../Assets/centra-main-header.svg";
 import CentraBackArrow from "../../Assets/back-arrow-centra.svg";
-import ProfilePictureMini from "./modules/ProfilePictureMini.jsx";
+import ProfilePictureMini from "../../Assets/modules/ProfilePictureMini.jsx";
 import "../styles/CentraPowder.css";
 import dayjs from "dayjs";
 import AddIcon from "@mui/icons-material/Add";

@@ -2,7 +2,7 @@ import React from "react";
 import HomepageHeader from "../../Assets/centra-homepage-header.svg";
 import HomepageLeaf from "../../Assets/centra-leaf.svg";
 import { useNavigate } from "react-router-dom";
-import ProfilePictureMini from "./modules/ProfilePictureMini.jsx";
+import ProfilePictureMini from "../../Assets/modules/ProfilePictureMini.jsx";
 import LeafLogo from "../../Assets/leaf-production-logo.svg";
 import PowderLogo from "../../Assets/powder-production-logo.svg";
 import DeliveryLogo from "../../Assets/delivery-logo.svg";

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Managing.css";
-import Avatar from "../../Assets/Avatar.svg";
+import "../styles/AdminManaging.css";
 import Arrow from "../../Assets/Arrow.svg";
 import Bell from "../../Assets/Bell.svg";
 import Bell2 from "../../Assets/BellTemp.svg";
 import Ship from "../../Assets/Shipment.svg";
 import Edit from "../../Assets/Edit.svg";
+import ProfilePictureMini from "../../Assets/modules/ProfilePictureMini.jsx";
 
 const fetchAllShipment = () => {
   return new Promise((resolve) => {
@@ -449,7 +449,7 @@ const ManageShipment = ({ onNavigate }) => {
         >
           <img src={Arrow} className="back-arrow" />
         </button>
-        <div className="title">Manage Shipment</div>
+        <div className="a-title">Manage Shipment</div>
         <div className="time-detail">
           <div className="text">Last Data Refresh at: </div>
           <div className="time">25 March 2024 ~ 10:30 PM</div>
@@ -474,7 +474,7 @@ const ManageShipment = ({ onNavigate }) => {
               <div className="name">John Doe</div>
               <div className="id">JOHN45</div>
             </div>
-            <img src={Avatar} className="avatar-icon" />
+            <ProfilePictureMini />
           </div>
         </div>
       </div>
@@ -708,7 +708,7 @@ const ManageShipment = ({ onNavigate }) => {
                                 handleSort(getSortType(), "shipmentid")
                               }
                             >
-                              Shipping ID {getArrow("shipmentid")}
+                              ID {getArrow("shipmentid")}
                             </th>
                             <th
                               className="courier-column"

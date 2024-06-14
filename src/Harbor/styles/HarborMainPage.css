@@ -1,0 +1,124 @@
+.harbor-page-container {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header-harbor {
+  width: 100vw;
+  height: 240px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.leaf-harbor {
+  position: absolute;
+  height: 232px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+.harbor-homepage {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6%;
+  display: flex;
+  align-items: center;
+}
+
+.h-top-1 {
+  top: 6%;
+  width: 85vw;
+  justify-content: space-between;
+}
+
+.top-2 {
+  top: 12%;
+  width: 80vw;
+  justify-content: space-between;
+}
+
+.harbor-title {
+  color: white;
+  margin: 0;
+}
+
+.time-date {
+  position: absolute;
+  top: 21%;
+  left: 10%;
+  width: 40vw;
+  text-align: left;
+  font-size: 5vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.button-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.button-box {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+  max-width: 400px;
+  max-height: 400px;
+  width: 90vw;
+  height: 90vw;
+  background-color: #224030;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+
+.button-box::before {
+  content: url("../../Assets/forward.svg");
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 5%;
+  top: 5%;
+}
+
+.button-box img {
+  width: 180px;
+  height: 180px;
+}
+
+.h-font-bold {
+  height: 30px;
+  font-weight: bold;
+  color: #abbc77;
+  font-size: 7vw;
+}

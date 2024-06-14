@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Managing.css";
-import Avatar from "../../Assets/Avatar.svg";
+import "../styles/AdminManaging.css";
 import Arrow from "../../Assets/Arrow.svg";
 import Bell from "../../Assets/Bell.svg";
 import Bell2 from "../../Assets/BellTemp.svg";
 import Batch from "../../Assets/Batches.svg";
 import Edit from "../../Assets/Edit.svg";
+import ProfilePictureMini from "../../Assets/modules/ProfilePictureMini.jsx";
 
 const fetchWetBatches = () => {
   return new Promise((resolve) => {
@@ -437,7 +437,7 @@ const ManageBatches = ({ onNavigate }) => {
         >
           <img src={Arrow} className="back-arrow" />
         </button>
-        <div className="title">Manage Batches</div>
+        <div className="a-title">Manage Batches</div>
         <div className="time-detail">
           <div className="text">Last Data Refresh at: </div>
           <div className="time">25 March 2024 ~ 10:30 PM</div>
@@ -462,7 +462,7 @@ const ManageBatches = ({ onNavigate }) => {
               <div className="name">John Doe</div>
               <div className="id">JOHN45</div>
             </div>
-            <img src={Avatar} className="avatar-icon" />
+            <ProfilePictureMini />
           </div>
         </div>
       </div>
@@ -704,11 +704,11 @@ const ManageBatches = ({ onNavigate }) => {
                                 handleSort(getSortType(), "batchid")
                               }
                             >
-                              Batch ID {getArrow("batchid")}
+                              ID {getArrow("batchid")}
                             </th>
                             <th
                               className="weight2-column"
-                              style={{ width: "12.5%" }}
+                              style={{ width: "13.5%" }}
                               onClick={() =>
                                 handleSort(getSortType(), "weight")
                               }
@@ -733,14 +733,14 @@ const ManageBatches = ({ onNavigate }) => {
                               Expiry {getArrow("expiry")}
                             </th>
                             <th
-                              style={{ width: "17%" }}
+                              style={{ width: "16.5%" }}
                               onClick={() =>
                                 handleSort(getSortType(), "status")
                               }
                             >
                               Status {getArrow("status")}
                             </th>
-                            <th style={{ width: "9.25%" }}> </th>
+                            <th style={{ width: "8.25%" }}> </th>
                           </tr>
                         </thead>
                         <tbody>
