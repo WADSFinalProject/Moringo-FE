@@ -31,7 +31,7 @@ const fetchXYZShipment = () => {
       date: "23/03/2024",
       weight: "14.25",
       packages: "2",
-      status: "Arrived",
+      status: "OTW",
     },
     {
       shipmentid: "300002",
@@ -273,15 +273,186 @@ const XYZManageShipment = ({ onNavigate }) => {
               </div>
             </div>
             <div className="b-edit-mode-content">
-              <div className="b-edit-mode-grid"></div>
-              <div className="b-edit-mode-bottom">
-                <button
-                  className="b-confirm-button"
-                  onClick={() => alert("TESTING")}
-                >
-                  Notify Harbor
-                </button>
-              </div>
+              {windowWidth <= 560 ? (
+                <>
+                  <div className="b-edit-mode-grid" style={{ gap: "0px" }}>
+                    <div className="card-wrapper xyz">
+                      <div className="card-header">
+                        <div className="card-subtitle">
+                          ID {selectedShipment.shipmentid}
+                        </div>
+                        <div className="card-title xyz">
+                          Weight: {selectedShipment.weight} Kg
+                        </div>
+                      </div>
+                      <div className="card-content xyz">
+                        <div className="card-description">
+                          Received on: {selectedShipment.date}
+                        </div>
+                        <div className="card-description xyz">
+                          Courier: {selectedShipment.courier}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-wrapper xyz">
+                      <div className="card-content xyz">
+                        <div className="state-icons column">
+                          <div
+                            className={`state-icon1 ${
+                              selectedShipment.status === "Pending" ||
+                              selectedShipment.status === "OTW" ||
+                              selectedShipment.status === "Arrived"
+                                ? "on"
+                                : ""
+                            }`}
+                          >
+                            <span className="state-text-m">Pending </span>
+                          </div>
+                          <div
+                            className={`state-icon-conn ${
+                              selectedShipment.status === "OTW" ||
+                              selectedShipment.status === "Arrived"
+                                ? "on"
+                                : ""
+                            }`}
+                          />
+                          <div
+                            className={`state-icon2 ${
+                              selectedShipment.status === "OTW" ||
+                              selectedShipment.status === "Arrived"
+                                ? "on"
+                                : ""
+                            }`}
+                          >
+                            <span className="state-text-m">OTW </span>
+                          </div>
+                          <div
+                            className={`state-icon-conn ${
+                              selectedShipment.status === "Arrived" ? "on" : ""
+                            }`}
+                          />
+                          <div
+                            className={`state-icon3 ${
+                              selectedShipment.status === "Arrived" ? "on" : ""
+                            }`}
+                          >
+                            <span className="state-text-m">Arrived </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="b-edit-mode-bottom">
+                    <button
+                      className="b-confirm-button notify-xyz"
+                      onClick={() => alert("NOTIFY HARBOR OR SMTHING")}
+                      disabled={selectedShipment.status !== "Arrived"}
+                    >
+                      Notify Harbor
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="map-display">Map goes here</div>
+                  <div
+                    className="p-table-wrapper"
+                    style={{ overflow: "hidden", flexGrow: "0" }}
+                  >
+                    <table className="p-table-container">
+                      <thead>
+                        <tr>
+                          <th style={{ width: "15%" }}>ID</th>
+                          <th
+                            className="courier-column"
+                            style={{ width: "15%" }}
+                          >
+                            Courier
+                          </th>
+                          <th className="date-column" style={{ width: "15%" }}>
+                            Date
+                          </th>
+                          <th
+                            className="weight-column"
+                            style={{ width: "15%" }}
+                          >
+                            Weight (Kg)
+                          </th>
+                          <th style={{ width: "15%" }}>Packages</th>
+                          <th style={{ width: "15%" }}>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{selectedShipment.shipmentid}</td>
+                          <td className="courier-column">
+                            {selectedShipment.courier}
+                          </td>
+                          <td className="date-column">
+                            {selectedShipment.date}
+                          </td>
+                          <td className="weight-column">
+                            {selectedShipment.weight}
+                          </td>
+                          <td>{selectedShipment.packages}</td>
+                          <td style={{ textAlign: "-webkit-center" }}>
+                            <span
+                              className={getShipmentClass(
+                                selectedShipment.status
+                              )}
+                            >
+                              {selectedShipment.status}
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="state-icons row">
+                    <div
+                      className={`state-icon1 ${
+                        selectedShipment.status === "Pending" ||
+                        selectedShipment.status === "OTW" ||
+                        selectedShipment.status === "Arrived"
+                          ? "on"
+                          : ""
+                      }`}
+                    >
+                      Pending
+                    </div>
+                    <div
+                      className={`state-icon-conn ${
+                        selectedShipment.status === "OTW" ||
+                        selectedShipment.status === "Arrived"
+                          ? "on"
+                          : ""
+                      }`}
+                    />
+                    <div
+                      className={`state-icon2 ${
+                        selectedShipment.status === "OTW" ||
+                        selectedShipment.status === "Arrived"
+                          ? "on"
+                          : ""
+                      }`}
+                    >
+                      OTW
+                    </div>
+                    <div
+                      className={`state-icon-conn ${
+                        selectedShipment.status === "Arrived" ? "on" : ""
+                      }`}
+                    />
+                    <div
+                      className={`state-icon3 ${
+                        selectedShipment.status === "Arrived" ? "on" : ""
+                      }`}
+                    >
+                      Arrived
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         ) : windowWidth <= 560 ? (
@@ -412,7 +583,7 @@ const XYZManageShipment = ({ onNavigate }) => {
                             <td className="date-column">{shipment.date}</td>
                             <td className="weight-column">{shipment.weight}</td>
                             <td>{shipment.packages}</td>
-                            <td padding>
+                            <td>
                               <span
                                 className={getShipmentClass(shipment.status)}
                               >

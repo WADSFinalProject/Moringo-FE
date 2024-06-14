@@ -766,7 +766,7 @@ const ManageShipment = ({ onNavigate }) => {
                                 {shipment.weight}
                               </td>
                               <td>{shipment.packages}</td>
-                              <td padding>
+                              <td>
                                 <span
                                   className={getShipmentClass(shipment.status)}
                                 >

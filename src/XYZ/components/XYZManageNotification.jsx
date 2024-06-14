@@ -11,50 +11,49 @@ const fetchNotifications = async () => {
     const notification = [
       {
         id: "0",
-        email: "test@gmail.com",
+        shipmentid: "299992",
         date: `${formatDate(dateOffset(0))} ${formatTime(dateOffset(0))}`,
         read: true,
       },
       {
         id: "1",
-        email: "brandon@gmail.com",
+        shipmentid: "299993",
         date: `${formatDate(dateOffset(0))} ${formatTime(dateOffset(0))}`,
         read: false,
       },
       {
         id: "2",
-        email: "brandon@gmail.com",
+        shipmentid: "299994",
         date: `${formatDate(dateOffset(-1))} ${formatTime(dateOffset(0))}`,
         read: false,
       },
       {
         id: "3",
-        email: "brandon@gmail.com",
+        shipmentid: "299995",
         date: `${formatDate(dateOffset(-1))} ${formatTime(dateOffset(0))}`,
         read: false,
       },
       {
         id: "4",
-        email: "bryan@gmail.com",
+        shipmentid: "299996",
         date: `${formatDate(dateOffset(-2))} ${formatTime(dateOffset(0))}`,
         read: false,
       },
       {
         id: "5",
-        email: "bryan@gmail.com",
+        shipmentid: "299997",
         date: `${formatDate(dateOffset(-3))} ${formatTime(dateOffset(0))}`,
         read: false,
       },
       {
         id: "6",
-        email: "kenneth@gmail.com",
+        shipmentid: "299998",
         date: `${formatDate(dateOffset(-5))} ${formatTime(dateOffset(0))}`,
         read: false,
       },
       {
         id: "7",
-        email:
-          "kennethhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh@gmail.com",
+        shipmentid: "299999",
         date: `${formatDate(dateOffset(-18))} ${formatTime(dateOffset(0))}`,
         read: false,
       },
@@ -261,16 +260,17 @@ const ManageNotification = ({ onNavigate }) => {
                       />
                       <div className="notification-details">
                         <div>
+                          Shipment ID{" "}
                           <span
                             className={`notif-email ${
-                              notification.email.length > 10
+                              notification.shipmentid.length > 10
                                 ? "long-word-break"
                                 : ""
                             }`}
                           >
-                            {notification.email}
+                            {notification.shipmentid}
                           </span>{" "}
-                          has requested for approval
+                          has arrived at harbor
                         </div>
                         <div>
                           <span className="notification-extra-details">
@@ -321,16 +321,17 @@ const ManageNotification = ({ onNavigate }) => {
                       />
                       <div className="notification-details">
                         <div>
+                          Shipment ID{" "}
                           <span
                             className={`notif-email ${
-                              notification.email.length > 10
+                              notification.shipmentid.length > 10
                                 ? "long-word-break"
                                 : ""
                             }`}
                           >
-                            {notification.email}
+                            {notification.shipmentid}
                           </span>{" "}
-                          has requested for approval
+                          has arrived at harbor
                         </div>
                         <div>
                           <span className="notification-extra-details">
@@ -380,16 +381,17 @@ const ManageNotification = ({ onNavigate }) => {
                       />
                       <div className="notification-details">
                         <div>
+                          Shipment ID{" "}
                           <span
                             className={`notif-email ${
-                              notification.email.length > 10
+                              notification.shipmentid.length > 10
                                 ? "long-word-break"
                                 : ""
                             }`}
                           >
-                            {notification.email}
+                            {notification.shipmentid}
                           </span>{" "}
-                          has requested for approval
+                          has arrived at harbor
                         </div>
                         <div>
                           <span className="notification-extra-details">

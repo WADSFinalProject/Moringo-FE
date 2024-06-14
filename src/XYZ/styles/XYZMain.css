@@ -65,6 +65,145 @@
   align-self: center;
 }
 
+.map-display {
+  display: flex;
+  flex-grow: 1;
+  background-color: white;
+  margin: 10px 0px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.state-icons.column,
+.state-icons.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+.state-icons.column {
+  flex-direction: column-reverse;
+  align-items: unset;
+  margin-left: 20px;
+}
+
+.state-icon1,
+.state-icon2,
+.state-icon3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  margin: 10px 0px;
+  gap: 15px;
+}
+
+.state-icon1::before,
+.state-icon2::before,
+.state-icon3::before {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  margin: auto;
+  position: relative;
+  left: 2px;
+  border-radius: 10px;
+}
+
+.state-icon1::before {
+  content: url("../../Assets/Batches.svg");
+}
+
+.state-icon2::before {
+  content: url("../../Assets/Shipment.svg");
+}
+
+.state-icon3::before {
+  content: url("../../Assets/Arrived.svg");
+}
+
+.state-icon1::after,
+.state-icon2::after,
+.state-icon3::after {
+  content: "";
+  border: solid;
+  display: block;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  position: relative;
+  top: 1.5px;
+  transform: translateY(-200%);
+  z-index: 1;
+}
+
+.state-icon1.on::before,
+.state-icon2.on::before,
+.state-icon3.on::before,
+.state-icon1.on::after,
+.state-icon2.on::after,
+.state-icon3.on::after {
+  filter: invert(55%) sepia(21%) saturate(605%) hue-rotate(47deg)
+    brightness(96%) contrast(84%);
+}
+
+.state-icon-conn {
+  content: "";
+  height: 2.5px;
+  width: 30%;
+  margin: 0px -5px;
+  margin-top: -25px;
+  background-color: black;
+}
+
+.state-icon-conn.on {
+  background-color: #7b9461;
+}
+
+.b-confirm-button.notify-xyz {
+  height: 30px;
+  width: 150px;
+  border-radius: 15px;
+  background-color: #224030;
+  font-weight: bold;
+  margin: auto;
+}
+
+.b-confirm-button.notify-xyz:hover {
+  background-color: #4e6658;
+}
+
+.card-wrapper.xyz {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-content.xyz {
+  background-color: white;
+}
+
+.card-title.xyz {
+  color: white;
+  align-content: end;
+  font-weight: normal;
+}
+
+.card-description.xyz {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.b-confirm-button.notify-xyz:disabled {
+  cursor: not-allowed;
+  background-color: #224030;
+}
+
 @media (max-width: 770px) {
   .rescale-column {
     display: none;
@@ -99,5 +238,56 @@
 
   .d-box-detail.long {
     width: unset;
+  }
+
+  .state-icon1,
+  .state-icon2,
+  .state-icon3 {
+    flex-direction: row;
+  }
+
+  .state-icon1::after,
+  .state-icon2::after,
+  .state-icon3::after {
+    right: 166.5px;
+    top: -0.5px;
+    transform: unset;
+    filter: unset;
+    background-color: black;
+  }
+
+  .state-icon1.on::after,
+  .state-icon2.on::after,
+  .state-icon3.on::after {
+    filter: unset;
+    border-color: #336135;
+    background-color: #336135;
+  }
+
+  .state-icon1::before,
+  .state-icon2::before,
+  .state-icon3::before,
+  .state-icon1.on::before,
+  .state-icon2.on::before,
+  .state-icon3.on::before {
+    z-index: 2;
+    filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(254deg)
+      brightness(110%) contrast(110%);
+  }
+
+  .state-icon-conn {
+    height: 4vh;
+    width: 2.5px;
+    margin: -14px 0px;
+    margin-left: 11px;
+  }
+
+  .state-icon-conn.on {
+    background-color: #336135;
+  }
+
+  .state-text-m {
+    margin-left: 10px;
+    min-width: 95px;
   }
 }
