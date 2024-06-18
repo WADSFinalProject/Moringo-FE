@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const CircularCountdownTimer = ({
-  initialHours = 0,
+  initialHours = 24,
   initialMinutes = 0,
-  initialSeconds = 5,
+  initialSeconds = 0,
+  hoursLeft,
+  minutesLeft,
+  secondsLeft,
   onTimerFinish = () => {},
   start,
   reset,
@@ -15,11 +18,54 @@ const CircularCountdownTimer = ({
   });
 
   const [finished, setFinished] = useState(false);
+  const timerIntervalRef = useRef(null);
 
   const totalSeconds =
     initialHours * 3600 + initialMinutes * 60 + initialSeconds;
   const remainingSeconds = time.hours * 3600 + time.minutes * 60 + time.seconds;
   const percentage = ((totalSeconds - remainingSeconds) / totalSeconds) * 100;
+
+  useEffect(() => {
+    // Initialize the timer with the remaining time if production has started
+    if (start) {
+      setTime({
+        hours: hoursLeft,
+        minutes: minutesLeft,
+        seconds: secondsLeft,
+      });
+
+      // Clear any existing interval
+      if (timerIntervalRef.current) {
+        clearInterval(timerIntervalRef.current);
+      }
+
+      // Start a new interval
+      timerIntervalRef.current = setInterval(() => {
+        setTime((prevTime) => {
+          const { hours, minutes, seconds } = prevTime;
+          if (seconds > 0) {
+            return { hours, minutes, seconds: seconds - 1 };
+          } else if (minutes > 0) {
+            return { hours, minutes: minutes - 1, seconds: 59 };
+          } else if (hours > 0) {
+            return { hours: hours - 1, minutes: 59, seconds: 59 };
+          } else {
+            clearInterval(timerIntervalRef.current);
+            setFinished(true);
+            onTimerFinish();
+            return prevTime;
+          }
+        });
+      }, 1000);
+    }
+
+    return () => {
+      // Clean up the interval on component unmount or when start or reset changes
+      if (timerIntervalRef.current) {
+        clearInterval(timerIntervalRef.current);
+      }
+    };
+  }, [start, hoursLeft, minutesLeft, secondsLeft, onTimerFinish]);
 
   useEffect(() => {
     // Reset the timer when the reset prop changes
@@ -31,29 +77,7 @@ const CircularCountdownTimer = ({
       });
       setFinished(false);
     }
-  }, [reset]);
-
-  useEffect(() => {
-    if (!start) return;
-
-    const timerInterval = setInterval(() => {
-      const { hours, minutes, seconds } = time;
-
-      if (seconds > 0) {
-        setTime({ hours, minutes, seconds: seconds - 1 });
-      } else if (minutes > 0) {
-        setTime({ hours, minutes: minutes - 1, seconds: 59 });
-      } else if (hours > 0) {
-        setTime({ hours: hours - 1, minutes: 59, seconds: 59 });
-      } else {
-        clearInterval(timerInterval);
-        setFinished(true);
-        onTimerFinish();
-      }
-    }, 1000);
-
-    return () => clearInterval(timerInterval);
-  }, [time, onTimerFinish, start]);
+  }, [reset, initialHours, initialMinutes, initialSeconds]);
 
   const formatTime = (time) => {
     return time < 10 ? `0${time}` : time;
