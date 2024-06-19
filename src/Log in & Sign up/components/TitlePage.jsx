@@ -31,7 +31,7 @@ const TitlePage = () => {
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/login', {
+      const response = await fetch('https://moringo-be-sand.vercel.app//login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const TitlePage = () => {
         // Store the token in localStorage
         localStorage.setItem('token', token);
         try {
-          const response2 = await fetch('http://127.0.0.1:8000/current_user', {
+          const response2 = await fetch('https://moringo-be-sand.vercel.app//current_user', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
