@@ -100,13 +100,16 @@ const CentraDeliveries = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/current_user', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await fetch(
+          'https://moringo-be-sand.vercel.app/current_user',
+          {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         const data = await response.json();
         if (response.ok) {
@@ -128,7 +131,7 @@ const CentraDeliveries = () => {
       try {
         const token = localStorage.getItem('token');
         const response = await fetch(
-          `http://127.0.0.1:8000/all_powder_batches?centra_name=${branch}`,
+          `https://moringo-be-sand.vercel.app/all_powder_batches?centra_name=${branch}`,
           {
             method: 'GET',
             headers: {
@@ -140,17 +143,22 @@ const CentraDeliveries = () => {
 
         const data = await response.json();
         if (response.ok) {
-          const transformedBatches = data.map((batch) => ({
-            date: batch.date_recorded,
-            batchId: batch.id,
-            weight: batch.powder_weight,
-          }));
-          console.log('Transformed', transformedBatches);
-          setUndeliveredBatches(transformedBatches);
+          if (Array.isArray(data) && data.length > 0) {
+            const transformedBatches = data.map((batch) => ({
+              date: batch.date_recorded,
+              batchId: batch.id,
+              weight: batch.powder_weight,
+            }));
+            console.log('Transformed', transformedBatches);
+            setUndeliveredBatches(transformedBatches);
+          } else {
+            console.log('No batches found');
+            setUndeliveredBatches([]);
+          }
           try {
             const token = localStorage.getItem('token');
             const response = await fetch(
-              `http://127.0.0.1:8000/centra/shipments?centra_name=${branch}`,
+              `https://moringo-be-sand.vercel.app/centra/shipments?centra_name=${branch}`,
               {
                 method: 'GET',
                 headers: {
@@ -294,7 +302,7 @@ const CentraDeliveries = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://127.0.0.1:8000/centra/shipments?token=${token}`,
+        `https://moringo-be-sand.vercel.app/centra/shipments?token=${token}`,
         {
           method: 'POST',
           headers: {
@@ -309,7 +317,7 @@ const CentraDeliveries = () => {
         alert('Shipment has been added');
         try {
           const response = await fetch(
-            `http://127.0.0.1:8000/update_powder_shipping?powder_id=${selectedBatchId}`,
+            `https://moringo-be-sand.vercel.app/update_powder_shipping?powder_id=${selectedBatchId}`,
             {
               method: 'PUT',
               headers: {
