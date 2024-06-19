@@ -65,7 +65,7 @@ const CentraLeaves = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/current_user', {
+        const response = await fetch('https://moringo-fe-eta.vercel.app/current_user', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const CentraLeaves = () => {
         if (branch) {
           // Fetch machine data
           const machineResponse = await fetch(
-            `http://127.0.0.1:8000/centra/drying_machine_remaining_time/${branch}`,
+            `https://moringo-fe-eta.vercel.app/centra/drying_machine_remaining_time/${branch}`,
             {
               method: 'GET',
               headers: {
@@ -131,7 +131,7 @@ const CentraLeaves = () => {
 
           // Fetch batch data
           const batchResponse = await fetch(
-            `http://127.0.0.1:8000/centra/moringa_batches?centra_name=${branch}`,
+            `https://moringo-fe-eta.vercel.app/centra/moringa_batches?centra_name=${branch}`,
             {
               method: 'GET',
               headers: {
@@ -187,7 +187,7 @@ const CentraLeaves = () => {
         new_weight: Number(currentWeight),
       };
       const response = await fetch(
-        'http://127.0.0.1:8000/centra/drying_machine_update_weight',
+        'https://moringo-fe-eta.vercel.app/centra/drying_machine_update_weight',
         {
           method: 'POST',
           headers: {
@@ -239,7 +239,7 @@ const CentraLeaves = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        'http://127.0.0.1:8000/centra/moringa_batches',
+        'https://moringo-fe-eta.vercel.app/centra/moringa_batches',
         {
           method: 'POST',
           headers: {
@@ -327,7 +327,7 @@ const CentraLeaves = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://127.0.0.1:8000/centra/moringa_batches/${batchToEdit.batchId}`,
+        `https://moringo-fe-eta.vercel.app/centra/moringa_batches/${batchToEdit.batchId}`,
         {
           method: 'PUT',
           headers: {
@@ -423,7 +423,7 @@ const CentraLeaves = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://127.0.0.1:8000/centra/start_machine/${branch}`,
+        `https://moringo-fe-eta.vercel.app/centra/start_machine/${branch}`,
         {
           method: 'POST',
           headers: {
@@ -471,7 +471,7 @@ const CentraLeaves = () => {
         weight_dried: Number(inputDryWeight),
       };
       const response = await fetch(
-        'http://127.0.0.1:8000/centra/drying_results',
+        'https://moringo-fe-eta.vercel.app/centra/drying_results',
         {
           method: 'POST',
           headers: {
@@ -487,7 +487,7 @@ const CentraLeaves = () => {
         try {
           const token = localStorage.getItem('token');
           const response = await fetch(
-            `http://127.0.0.1:8000/centra/dried_leaves_batch?centra_name=${branch}&production_date=${formattedInputDate}`,
+            `https://moringo-fe-eta.vercel.app/centra/dried_leaves_batch?centra_name=${branch}&production_date=${formattedInputDate}`,
             {
               method: 'GET',
               headers: {
@@ -508,7 +508,7 @@ const CentraLeaves = () => {
                 is_processing: 0,
               };
               const response = await fetch(
-                `http://127.0.0.1:8000/centra/drying_machine_update_weight`,
+                `https://moringo-fe-eta.vercel.app/centra/drying_machine_update_weight`,
                 {
                   method: 'POST',
                   headers: {
@@ -529,7 +529,7 @@ const CentraLeaves = () => {
                   };
                   console.log(JSON.stringify(deleteBatches));
                   const response = await fetch(
-                    `http://127.0.0.1:8000/centra/moringa_batches/all`,
+                    `https://moringo-fe-eta.vercel.app/centra/moringa_batches/all`,
                     {
                       method: 'DELETE',
                       headers: {
