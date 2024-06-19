@@ -117,3 +117,13 @@
   width: 93%;
   justify-content: space-between;
 }
+
+.area-below-scanning {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1vh;
+  margin-top: 1vh;
+}
