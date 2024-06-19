@@ -62,7 +62,7 @@ const CentraPowder = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/current_user', {
+        const response = await fetch('https://moringo-fe-eta.vercel.app/current_user', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const CentraPowder = () => {
           try {
             const token = localStorage.getItem('token');
             const batchResponse = await fetch(
-              `http://127.0.0.1:8000/centra/dried_leaves_batches?centra_name=${data.branch}`,
+              `https://moringo-fe-eta.vercel.app/centra/dried_leaves_batches?centra_name=${data.branch}`,
               {
                 method: 'GET',
                 headers: {
@@ -201,7 +201,7 @@ const CentraPowder = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://127.0.0.1:8000/centra/start_powder_machine/${branch}`,
+        `https://moringo-fe-eta.vercel.app/centra/start_powder_machine/${branch}`,
         {
           method: 'POST',
           headers: {
@@ -219,7 +219,7 @@ const CentraPowder = () => {
           const token = localStorage.getItem('token');
           const updateProcessing = { ids: selectedBatches };
           const response = await fetch(
-            `http://127.0.0.1:8000/update_processing`,
+            `https://moringo-fe-eta.vercel.app/update_processing`,
             {
               method: 'PUT',
               headers: {
@@ -277,7 +277,7 @@ const CentraPowder = () => {
         weight_dried: Number(inputPowderWeight),
       };
       const response = await fetch(
-        'http://127.0.0.1:8000/centra/powder_results',
+        'https://moringo-fe-eta.vercel.app/centra/powder_results',
         {
           method: 'POST',
           headers: {
@@ -293,7 +293,7 @@ const CentraPowder = () => {
         try {
           const token = localStorage.getItem('token');
           const response = await fetch(
-            `http://127.0.0.1:8000/centra/powder_batch?centra_name=${branch}&production_date=${formattedInputDate}`,
+            `https://moringo-fe-eta.vercel.app/centra/powder_batch?centra_name=${branch}&production_date=${formattedInputDate}`,
             {
               method: 'GET',
               headers: {
@@ -312,7 +312,7 @@ const CentraPowder = () => {
                 is_processing: 0,
               };
               const response = await fetch(
-                `http://127.0.0.1:8000/centra/powder_machine_update_status`,
+                `https://moringo-fe-eta.vercel.app/centra/powder_machine_update_status`,
                 {
                   method: 'POST',
                   headers: {
@@ -331,7 +331,7 @@ const CentraPowder = () => {
                   };
                   console.log(JSON.stringify(deleteBatches));
                   const response = await fetch(
-                    `http://127.0.0.1:8000/centra/dried_batches`,
+                    `https://moringo-fe-eta.vercel.app/centra/dried_batches`,
                     {
                       method: 'DELETE',
                       headers: {
