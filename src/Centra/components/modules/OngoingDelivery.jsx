@@ -14,6 +14,7 @@ const UndeliveredBatch = ({
   receiver,
   barcode,
   arrived,
+  arrivalDate,
   onOpenShipmentDetails,
   testingMove,
 }) => {
@@ -88,7 +89,8 @@ const UndeliveredBatch = ({
                 expeditionTeam,
                 sender,
                 receiver,
-                barcode
+                barcode,
+                arrivalDate
               )
             }
           >
