@@ -29,99 +29,10 @@ import {
 const CentraDeliveries = () => {
   const [undeliveredBatches, setUndeliveredBatches] = useState([]);
   const [filteredBatches, setFilteredBatches] = useState([]);
-  const [ongoingShipments, setOngoingShipments] = useState([
-    {
-      shipmentId: 'SH001',
-      weight: 2.0,
-      sender: 'Sender Address 1',
-      receiver: 'Receiver Address 1',
-      packageCount: 3,
-      expeditionTeam: 'Team A',
-      productionDate: '01/12/23',
-      barcode:
-        'https://cdn.discordapp.com/attachments/1003843960566992968/1245955024551673856/WhatsApp_Image_2024-05-31_at_11.17.36_8752ec5a.jpg?ex=665aa18a&is=6659500a&hm=b08f8e156167786ab12c82bebbc147e91e06661ee39ecfc99ef3789d9715b963&',
-    },
-    {
-      shipmentId: 'SH002',
-      weight: 5.5,
-      sender:
-        "I can't take it anymore. I'm sick of Acheron. I try to play Seele, my Acheron deals more damage. I try to play Jingliu, my Acheron deals more damage. I try to play DHIL, my Acheron does more damage. I want to play Silver Wolf, her best team has Acheron. I want to play Sparkle, but she wants Acheron. She grabs me by the throat, I grind for her, I do SU for her. I bought the 5* SU Nihility Lightcone for her, even superimpose it for her. She isn't satisfied. I pull for her signature lightcone, she scoffs it off. 'I need this to be superimposed.' She tells me.She doesn't need a team and she throws herself onto her enemies. 'You just need to support me, I can do everything by myself.' I can't pull for more support characters, I dont have enough oneiric shards and they aren't available yet. She grabs my credit card, it declines. 'Guess this is the end.' She uses her ult. She says her ult line. At this point, I've already been broken. She doesn't even need energy. What a cruel world.",
-      receiver:
-        "Who's joe? a distant voice asks. Instantly everyone nearby hears the sound of 1,000s of bricks rapidly shuffling towards his location. The earth itself seemed to cry out in agony, until finally the ground itself split open and a horrific creature crawled from the ground, covered in mucus and tar. Joe Momma…the creature whispered. The man cried out in pain as he disintegrated into dust, and the whole world fell silent in fear.",
-      packageCount: 5,
-      expeditionTeam: 'Team qwerty uiop adsfjkl;',
-      productionDate: '02/12/23',
-      barcode:
-        'https://i.scdn.co/image/ab67616d00001e02496ef41310a298c001da69cf',
-    },
-    {
-      shipmentId: 'SH003',
-      weight: 2.5,
-      sender: 'Sender Address 3',
-      receiver: 'Receiver Address 3',
-      packageCount: 2,
-      expeditionTeam: 'Team C',
-      productionDate: '03/12/23',
-      barcode:
-        'https://cdn.pixabay.com/photo/2014/04/02/16/19/barcode-306926_1280.png',
-    },
-    {
-      shipmentId: 'SH004',
-      weight: 3.2,
-      sender: 'Sender Address 4',
-      receiver: 'Receiver Address 4',
-      packageCount: 4,
-      expeditionTeam: 'Team D',
-      productionDate: '04/12/23',
-      barcode:
-        'https://cdn.pixabay.com/photo/2014/04/02/16/19/barcode-306926_1280.png',
-    },
-    {
-      shipmentId: 'SH005',
-      weight: 2.0,
-      sender: 'Sender Address 5',
-      receiver: 'Receiver Address 5',
-      packageCount: 3,
-      expeditionTeam: 'Team E',
-      productionDate: '05/12/23',
-      barcode:
-        'https://cdn.pixabay.com/photo/2014/04/02/16/19/barcode-306926_1280.png',
-    },
-    {
-      shipmentId: 'SH006',
-      weight: 5.5,
-      sender: 'Sender Address 6',
-      receiver: 'Receiver Address 6',
-      packageCount: 5,
-      expeditionTeam: 'Team F',
-      productionDate: '06/12/23',
-      barcode:
-        'https://cdn.pixabay.com/photo/2014/04/02/16/19/barcode-306926_1280.png',
-    },
-    {
-      shipmentId: 'SH007',
-      weight: 2.5,
-      sender: 'Sender Address 7',
-      receiver: 'Receiver Address 7',
-      packageCount: 2,
-      expeditionTeam: 'Team G',
-      productionDate: '07/12/23',
-      barcode:
-        'https://cdn.pixabay.com/photo/2014/04/02/16/19/barcode-306926_1280.png',
-    },
-    {
-      shipmentId: 'SH008',
-      weight: 3.2,
-      sender: 'Sender Address 8',
-      receiver: 'Receiver Address 8',
-      packageCount: 4,
-      expeditionTeam: 'Team H',
-      productionDate: '08/12/23',
-      barcode:
-        'https://cdn.pixabay.com/photo/2014/04/02/16/19/barcode-306926_1280.png',
-    },
-  ]);
+  const [ongoingShipments, setOngoingShipments] = useState([]);
+  const [filteredOngoingShipments, setFilteredOngoingShipments] = useState([]);
   const [arrivedShipments, setArrivedShipments] = useState([]);
+  const [filteredArrivedShipments, setFilteredArrivedShipments] = useState([]);
   const [selectedTab, setSelectedTab] = useState(0);
   const [previouslySelectedTab, setPreviouslySelectedTab] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
@@ -148,6 +59,7 @@ const CentraDeliveries = () => {
   const [selectedShipmentSender, setSelectedShipmentSender] = useState('');
   const [selectedShipmentReceiver, setSelectedShipmentReceiver] = useState('');
   const [selectedShipmentBarcode, setSelectedShipmentBarcode] = useState('');
+  const [selectedShipmentArrival, setSelectedShipmentArrival] = useState('');
   const [branch, setBranch] = useState('');
 
   const navigate = useNavigate();
@@ -168,7 +80,8 @@ const CentraDeliveries = () => {
     shipmentExpeditionTeam,
     shipmentSender,
     shipmentReceiver,
-    shipmentBarcode
+    shipmentBarcode,
+    shipmentArrivalDate
   ) => {
     setSelectedShipmentId(shipmentId);
     setSelectedShipmentWeight(shipmentWeight);
@@ -178,6 +91,7 @@ const CentraDeliveries = () => {
     setSelectedShipmentSender(shipmentSender);
     setSelectedShipmentReceiver(shipmentReceiver);
     setSelectedShipmentBarcode(shipmentBarcode);
+    setSelectedShipmentArrival(shipmentArrivalDate);
     setPreviouslySelectedTab(selectedTab);
     setSelectedTab(3);
   };
@@ -226,7 +140,6 @@ const CentraDeliveries = () => {
 
         const data = await response.json();
         if (response.ok) {
-          console.log('Data', data);
           const transformedBatches = data.map((batch) => ({
             date: batch.date_recorded,
             batchId: batch.id,
@@ -234,6 +147,52 @@ const CentraDeliveries = () => {
           }));
           console.log('Transformed', transformedBatches);
           setUndeliveredBatches(transformedBatches);
+          try {
+            const token = localStorage.getItem('token');
+            const response = await fetch(
+              `http://127.0.0.1:8000/centra/shipments?centra_name=${branch}`,
+              {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+
+            const data = await response.json();
+            console.log('dsfsd', data.shipments);
+            if (response.ok) {
+              const transformedShipments = data.shipments.map((shipment) => ({
+                shipmentId: shipment.id,
+                weight: shipment.package_weight,
+                sender: shipment.sender_address,
+                receiver: shipment.receiver_address,
+                packageCount: shipment.total_package,
+                expeditionTeam: shipment.expedition,
+                productionDate: shipment.date_shipped,
+                barcode: shipment.barcode,
+                isDelivered: shipment.is_Delivered,
+                arrivalDate: shipment.arrival_date,
+              }));
+
+              const transformedOngoingShipments = transformedShipments.filter(
+                (shipment) => shipment.isDelivered === 0
+              );
+              const transformedArrivedShipments = transformedShipments.filter(
+                (shipment) => shipment.isDelivered === 1
+              );
+
+              setOngoingShipments(transformedOngoingShipments);
+              setArrivedShipments(transformedArrivedShipments);
+            } else {
+              console.error('Failed to get powder batches:', response.status);
+              alert('Failed to get powder batches. Please try again.');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+          }
         } else {
           console.error('Failed to get powder batches:', response.status);
           alert('Failed to get powder batches. Please try again.');
@@ -278,21 +237,27 @@ const CentraDeliveries = () => {
         String(batch.batchId).toLowerCase().includes(searchQuery.toLowerCase())
       )
     );
-    console.log(
-      'Filtered',
-      undeliveredBatches.filter((batch) =>
-        String(batch.batchId).toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    );
   }, [undeliveredBatches, searchQuery]);
 
-  const filteredOngoingShipments = ongoingShipments.filter((shipment) =>
-    shipment.shipmentId.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  React.useEffect(() => {
+    setFilteredOngoingShipments(
+      ongoingShipments.filter((shipment) =>
+        String(shipment.shipmentId)
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
+    );
+  }, [ongoingShipments, searchQuery]);
 
-  const filteredArrivedShipments = arrivedShipments.filter((shipment) =>
-    shipment.shipmentId.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  React.useEffect(() => {
+    setFilteredArrivedShipments(
+      arrivedShipments.filter((shipment) =>
+        String(shipment.shipmentId)
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
+    );
+  }, [arrivedShipments, searchQuery]);
 
   const handleMoveBack = () => {
     navigate('/centra/homepage');
@@ -342,7 +307,29 @@ const CentraDeliveries = () => {
       const data = await response.json();
       if (response.ok) {
         alert('Shipment has been added');
-        window.location.reload();
+        try {
+          const response = await fetch(
+            `http://127.0.0.1:8000/update_powder_shipping?powder_id=${selectedBatchId}`,
+            {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+
+          const data = await response.json();
+          if (response.ok) {
+            alert('Powder batch has been shipped');
+            window.location.reload();
+          } else {
+            console.error('Failed to fetch current user:', response.status);
+            alert('Failed to fetch current user. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+        }
       } else {
         console.error('Failed to fetch current user:', response.status);
         alert('Failed to fetch current user. Please try again.');
@@ -438,6 +425,7 @@ const CentraDeliveries = () => {
                   receiver={shipment.receiver}
                   barcode={shipment.barcode}
                   arrived={false}
+                  arrivalDate={shipment.arrivalDate}
                   onOpenShipmentDetails={handleOpenShipmentDetails}
                   testingMove={handleTestMove}
                 />
@@ -457,6 +445,7 @@ const CentraDeliveries = () => {
                   receiver={shipment.receiver}
                   barcode={shipment.barcode}
                   arrived={true}
+                  arrivalDate={shipment.arrivalDate}
                   onOpenShipmentDetails={handleOpenShipmentDetails}
                   testingMove={handleTestMove}
                 />
@@ -505,7 +494,9 @@ const CentraDeliveries = () => {
                   </div>
                   {previouslySelectedTab == 1 ? null : (
                     <div className='shipment-detail-received-date'>
-                      {`Received on: ${dayjs().format('DD/MM/YY')}`}
+                      {`Received on: ${dayjs(selectedShipmentArrival).format(
+                        'DD/MM/YYYY'
+                      )}`}
                     </div>
                   )}
                 </div>
@@ -576,7 +567,7 @@ const CentraDeliveries = () => {
                 {previouslySelectedTab == 1 ? (
                   <div className='shipment-detail-barcode'>
                     <img
-                      src={selectedShipmentBarcode}
+                      src={`data:image/png;base64,${selectedShipmentBarcode}`}
                       alt='barcode'
                       className='shipment-barcode'
                     />
