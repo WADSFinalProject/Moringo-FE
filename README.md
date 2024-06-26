@@ -1,40 +1,35 @@
 # Moringo Front End
+![image](https://github.com/WADSFinalProject/Moringo-FE/assets/114371692/664d9222-ffa9-4720-b3a9-f437b1a685ae)
+This is the repository for the front end part of Moringo. The frotnend is built using Rect, JavaScript, CSS, and HTML.
 
-Please Push all your code into this repo under the src folder
-add your part with a folder with assets, components, and styles.
+## Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/WADSFinalProject/Moringo-FE
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-And add all your modules using npm install on the primary repo dont copy any files that are already there.
+## Usage
+1. How to run
+   ```
+   npm run dev
+   ```
+3. Open your localhost
 
-To download the repo please use git clone or git pull so you have access to all the files and are able to push to the repository
+## Video
+https://drive.google.com/drive/u/1/folders/1jQOZGJLJBr49u6Y_zBoQEt-TckN9P5AD
 
-How to copy the repository (Make sure to be in an Empty Folder) :
-1. Create a local github repository using git init
-```
-git init
-```
-2. Then use set the github remote link
-```
-git remote add origin https://github.com/WADSFinalProject/Moringo-FE
-```
-3. Then pull the repository using git pull
-```
-git pull
-```
-4. Then switch branches to the master branch
-```
-git checkout master
-```
-5. Then you should see all the files there
+## Deployment
+1. Open and log in to vercel
+2. Create a new project
+3. link the github repository
+4. Deploy
 
-# Remember to add all files into the src folder and add all necessary files if you have too
-![alt text](SRCImage.png)
-
-Here and Add necessary files outside
-
-![alt text](FolderImage.png)
-
-Make sure to create your folder here and follow this if possible
-
-![alt text](RouteImage.png)
-
-Then add the routes here in the app.jsx file
+## Contributors
+Alya Nursalma Ridwan - 2602184265 
+Brandon Salim - 2602177783
+Muhammad Haramain Asyi Emirryan - 2602206770
+Bryan Sujoso - 2602179151
