@@ -30,7 +30,7 @@ https://drive.google.com/drive/u/1/folders/1jQOZGJLJBr49u6Y_zBoQEt-TckN9P5AD
 4. Deploy
 
 ## Contributors
-Alya Nursalma Ridwan - 2602184265 
-Brandon Salim - 2602177783
-Muhammad Haramain Asyi Emirryan - 2602206770
-Bryan Sujoso - 2602179151
+- Alya Nursalma Ridwan - 2602184265 
+- Brandon Salim - 2602177783
+- Muhammad Haramain Asyi Emirryan - 2602206770
+- Bryan Sujoso - 2602179151
