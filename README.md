@@ -1,5 +1,6 @@
 # Moringo Front End
-![image](https://github.com/WADSFinalProject/Moringo-FE/assets/114371692/664d9222-ffa9-4720-b3a9-f437b1a685ae)
+![image](https://github.com/WADSFinalProject/Moringo-FE/assets/114371692/fccaca50-9b20-4d4d-89a2-fce366c7abe8)
+
 This is the repository for the front end part of Moringo. The frotnend is built using Rect, JavaScript, CSS, and HTML.
 
 ## Installation
