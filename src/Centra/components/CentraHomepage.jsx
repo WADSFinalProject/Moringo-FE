@@ -20,11 +20,7 @@ const CentraHomepage = () => {
 
   const [powderBatchTimers, setPowderBatchTimers] = React.useState([]);
 
-  const ongoingDeliveries = [
-    { shipmentId: '#OL001', weight: 3.0, noOfPackages: 2 },
-    { shipmentId: '#OL002', weight: 9.0, noOfPackages: 4 },
-    { shipmentId: '#OL003', weight: 12.2, noOfPackages: 777 },
-  ];
+  const [ongoingDeliveries, setOngoingDeliveries] = React.useState([]);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -38,13 +34,16 @@ const CentraHomepage = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://moringo-be-sand.vercel.app/current_user', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await fetch(
+          'https://moringo-be-sand.vercel.app/current_user',
+          {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         const data = await response.json();
         if (response.ok) {
@@ -118,6 +117,45 @@ const CentraHomepage = () => {
                 seconds: remaining_seconds,
               };
               setPowderBatchTimers([...powderBatchTimers, powderTimer]);
+              try {
+                const token = localStorage.getItem('token');
+                const response = await fetch(
+                  `https://moringo-be-sand.vercel.app/centra/shipments?centra_name=${branch}`,
+                  {
+                    method: 'GET',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      Authorization: `Bearer ${token}`,
+                    },
+                  }
+                );
+
+                const data = await response.json();
+                console.log('dsfsd', data.shipments);
+                if (response.ok) {
+                  const transformedShipments = data.shipments.map(
+                    (shipment) => ({
+                      shipmentId: shipment.id,
+                      weight: shipment.package_weight,
+                      noOfPackages: shipment.total_package,
+                      isDelivered: shipment.is_Delivered,
+                    })
+                  );
+
+                  const transformedOngoingShipments =
+                    transformedShipments.filter(
+                      (shipment) => shipment.isDelivered === 0
+                    );
+
+                  setOngoingDeliveries(transformedOngoingShipments);
+                } else {
+                  console.error('Failed to get shipmentss:', response.status);
+                  alert('Failed to get shipments. Please try again.');
+                }
+              } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+              }
             } else {
               console.error('Failed to fetch machine data:', response.status);
               alert('Failed to fetch machine data. Please try again.');
