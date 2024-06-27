@@ -29,6 +29,12 @@ https://drive.google.com/drive/u/1/folders/1jQOZGJLJBr49u6Y_zBoQEt-TckN9P5AD
 3. link the github repository
 4. Deploy
 
+## User Credentials (email), (password)
+1. Centra: (centra55@gmail.com), (centra)
+2. Harbor: (harbor2@gmail.com), (harbor2)
+3. XYZ: (yes@gmail.com), (yesyes)
+4. Admin: (admin@gmail.com), (admin)
+
 ## Contributors
 - Alya Nursalma Ridwan - 2602184265 
 - Brandon Salim - 2602177783
